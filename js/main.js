@@ -8,7 +8,7 @@ const PRODUCTS = [
     id: "cover-me-tee-black",
     name: "Cover Me Tee_Black",
     sub: "나한테 올려 / 커버해",
-    price: 39000,
+    price: 790000,
     cate: ["new", "26fw", "top"],
     soldOut: true,
     sizes: ["S", "M", "L", "XL"],
