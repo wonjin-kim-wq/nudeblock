@@ -21,6 +21,10 @@ const PRODUCTS = [
       "assets/product/d-sleeve.jpg",
     ],
     hoverImage: "assets/product/back.jpg",
+    detailImages: [
+      { src: "assets/product/tee-front-back.webp", alt: "Cover Me Tee_Black 앞면과 뒷면 전체", width: 1536, height: 1024 },
+      { src: "assets/product/tee-detail.webp", alt: "Cover Me Tee_Black 앞뒤 프린트, 넥밴드와 소매 마감 상세", width: 1086, height: 1448 },
+    ],
   },
 ];
 
@@ -239,6 +243,14 @@ function initDetail() {
   if (!root) return;
   const p = PRODUCTS.find((x) => x.id === params.get("id")) || PRODUCTS[0];
   document.title = `${p.name} - nudeblock`;
+
+  const story = $(".product-story");
+  if (story) {
+    story.innerHTML = (p.detailImages || []).map((photo) =>
+      `<img src="${photo.src}" alt="${photo.alt}" width="${photo.width}" height="${photo.height}" loading="lazy" decoding="async">`
+    ).join("");
+    story.hidden = !p.detailImages?.length;
+  }
 
   // gallery
   const view = $(".view", root);
