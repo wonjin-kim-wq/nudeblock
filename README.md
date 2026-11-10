@@ -47,7 +47,7 @@ cart.html       장바구니 (localStorage, 브라우저에만 저장)
 about.html      ABOUT / STOCKIST / COMMUNITY
 css/style.css   전체 스타일. 색상은 :root 변수, 반응형 기준 860px
 js/main.js      상품 데이터(PRODUCTS), 헤더/푸터 렌더링, 각 페이지 로직
-assets/product/ 상품 사진 (원본 webp 2장 + 잘라낸 jpg 6장)
+assets/product/ 기존 검정 상품 사진 + rolling-thunder-white/ 흰색 상품 앞·뒤 WebP
 assets/space/   NASA 공개 우주 이미지 (carina, sunrise, pillars, andromeda)
 outputs/instagram/ 인스타그램용 제품 소개 영상(MP4), 커버·미리보기 이미지 (로컬 산출물)
 ```
@@ -71,11 +71,14 @@ outputs/instagram/ 인스타그램용 제품 소개 영상(MP4), 커버·미리�
 | `images`, `hoverImage` | 갤러리 이미지, 목록 마우스오버 이미지 |
 | `detailImages` | 상세 하단 사진 배열 (`src`, `alt`, 원본 `width`, `height`). 비율을 유지해 세로 배치 |
 
-상세 페이지의 설명·사이즈표·고시정보는 현재 `product.html`에 직접 적혀 있습니다(상품이 하나라서). 상품이 늘어나면 `PRODUCTS` 데이터로 옮겨야 합니다.
+상품별 모델명(`model`), 색상(`color`), 레터링 설명(`lettering`)은 `PRODUCTS`에서 관리합니다. 공통 소재·사이즈표·케어·배송·고시정보는 `product.html`을 함께 사용합니다.
 
 ## 현재 상태
 
-- 상품 1개: **Cover Me Tee_Black** (앞 "나한테 올려" / 뒤 "커버해"), **SOLD OUT**, 가격 **790,000원**
+- 상품 2개 (둘 다 SOLD OUT, S / M / L / XL):
+  - **Cover Me Tee_Black**: 앞 “나한테 올려” / 뒤 “커버해”, **790,000원**
+  - **Rolling Thunder Tee_White**: 앞 “일단 / 올려놨어” 두 줄 / 뒤 “롤링썬더” 한 줄, 검정 레터링, **650,000원**
+- 흰색 상품 사진은 기존 검정 상품을 참고해 내장 ImageGen으로 생성한 제품 시안입니다. 경로: `assets/product/rolling-thunder-white/`
 - **임시값(실제 정보로 교체 필요):** 상품명, 사이즈표 수치, 상품 설명, 푸터 사업자 정보·전화번호·이메일·계좌
 - **미구현:** 로그인, 마이페이지, 결제, 재입고 알림, 리뷰 작성, 이용약관/개인정보 페이지 → 누르면 "준비 중" 토스트만 뜸
 - 장바구니는 서버 없이 브라우저 localStorage에만 저장
@@ -97,6 +100,14 @@ outputs/instagram/ 인스타그램용 제품 소개 영상(MP4), 커버·미리�
 - 변경 내용
 - 남은 일 / 주의사항
 -->
+
+### 2026-11-10 — Codex
+- 흰색 Rolling Thunder Tee_White 추가: 앞면 “일단 / 올려놨어” 두 줄, 뒷면 “롤링썬더” 한 줄 검정 레터링, 가격 650,000원
+- 기존 핏·소재·사이즈·배송 안내·품절 상태 유지. 검정 상품 가격은 790,000원 유지
+- 내장 ImageGen으로 생성한 앞뒤 상품 사진을 WebP로 저장하고 목록·호버·갤러리·하단 상세 사진에 연결
+- 상품별 모델명·색상·레터링 설명을 PRODUCTS로 분리하여 잘못된 검정 상품 설명이 노출되지 않도록 수정
+- 검증: JavaScript 구문, 두 상품 가격·이미지 경로, 로컬 인앱 목록·흰색 상세·갤러리 전환·색상 및 브라우저 오류 없음 확인
+- 사용자 요청에 따라 README 포함 커밋·main 푸시 및 자동 배포 진행. 기존 미구현 기능은 남은 할 일 참조
 
 ### 2026-11-05 — Codex
 - 사용자 요청으로 Cover Me Tee_Black 가격을 790,000원으로 변경 (공통 PRODUCTS 데이터 사용으로 목록·상세·장바구니에 동일 적용)

@@ -2,13 +2,16 @@
    NUDEBLOCK shop — shared script
    ========================================================== */
 
-/* ---------- product data (single item for now) ---------- */
+/* ---------- product data ---------- */
 const PRODUCTS = [
   {
     id: "cover-me-tee-black",
     name: "Cover Me Tee_Black",
     sub: "나한테 올려 / 커버해",
     price: 790000,
+    model: "Cover Me Tee",
+    color: "Black",
+    lettering: "앞면 “나한테 올려” / 등판 “커버해” 레터링 프린트",
     cate: ["new", "26fw", "top"],
     soldOut: true,
     sizes: ["S", "M", "L", "XL"],
@@ -24,6 +27,27 @@ const PRODUCTS = [
     detailImages: [
       { src: "assets/product/tee-front-back.webp", alt: "Cover Me Tee_Black 앞면과 뒷면 전체", width: 1536, height: 1024 },
       { src: "assets/product/tee-detail.webp", alt: "Cover Me Tee_Black 앞뒤 프린트, 넥밴드와 소매 마감 상세", width: 1086, height: 1448 },
+    ],
+  },
+  {
+    id: "rolling-thunder-tee-white",
+    name: "Rolling Thunder Tee_White",
+    sub: "일단 올려놨어 / 롤링썬더",
+    price: 650000,
+    model: "Rolling Thunder Tee",
+    color: "White",
+    lettering: "앞면 “일단 / 올려놨어” 두 줄 / 등판 “롤링썬더” 검정 레터링 프린트",
+    cate: ["new", "26fw", "top"],
+    soldOut: true,
+    sizes: ["S", "M", "L", "XL"],
+    images: [
+      "assets/product/rolling-thunder-white/front.webp",
+      "assets/product/rolling-thunder-white/back.webp",
+    ],
+    hoverImage: "assets/product/rolling-thunder-white/back.webp",
+    detailImages: [
+      { src: "assets/product/rolling-thunder-white/front.webp", alt: "Rolling Thunder Tee_White 앞면 — 일단 / 올려놨어 두 줄 검정 레터링", width: 1086, height: 1448 },
+      { src: "assets/product/rolling-thunder-white/back.webp", alt: "Rolling Thunder Tee_White 뒷면 — 롤링썬더 검정 레터링", width: 1086, height: 1448 },
     ],
   },
 ];
@@ -283,6 +307,9 @@ function initDetail() {
   $(".js-name", root).textContent = p.name;
   $(".js-sub", root).textContent = p.sub;
   $(".js-price", root).textContent = won(p.price);
+  $(".js-lettering", root).textContent = p.lettering;
+  $(".js-model", root).textContent = p.model;
+  $$(".js-color").forEach((el) => { el.textContent = p.color; });
 
   // options
   const sel = $(".opt-select select", root);
