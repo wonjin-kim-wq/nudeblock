@@ -47,7 +47,7 @@ cart.html       장바구니 (localStorage, 브라우저에만 저장)
 about.html      ABOUT / STOCKIST / COMMUNITY
 css/style.css   전체 스타일. 색상은 :root 변수, 반응형 기준 860px
 js/main.js      상품 데이터(PRODUCTS), 헤더/푸터 렌더링, 각 페이지 로직
-assets/product/ 기존 검정 상품 사진 + rolling-thunder-white/ 흰색 상품 앞·뒤 WebP
+assets/product/ 상품 사진 (흰색 상품의 앞·뒤 사진은 rolling-thunder-white/와 hit-the-ball-white/)
 assets/space/   NASA 공개 우주 이미지 (carina, sunrise, pillars, andromeda)
 outputs/instagram/ 인스타그램용 제품 소개 영상(MP4), 커버·미리보기 이미지 (로컬 산출물)
 ```
@@ -75,10 +75,11 @@ outputs/instagram/ 인스타그램용 제품 소개 영상(MP4), 커버·미리�
 
 ## 현재 상태
 
-- 상품 2개 (둘 다 SOLD OUT, S / M / L / XL):
+- 상품 3개 (모두 SOLD OUT, S / M / L / XL):
   - **Cover Me Tee_Black**: 앞 “나한테 올려” / 뒤 “커버해”, **790,000원**
   - **Rolling Thunder Tee_White**: 앞 “일단 / 올려놨어” 두 줄 / 뒤 “롤링썬더” 한 줄, 검정 레터링, **650,000원**
-- 흰색 상품 사진은 기존 검정 상품을 참고해 내장 ImageGen으로 생성한 제품 시안입니다. 경로: `assets/product/rolling-thunder-white/`
+  - **Hit the Ball Tee_White**: 앞 윗줄 “캐치 안좋으면”, 아랫줄 “언더로 함” 가운데 정렬 / 뒤 “Hit the ball”, 검정 레터링, **790,000원**
+- 흰색 상품 사진은 내장 ImageGen으로 제작한 시안입니다. `assets/product/rolling-thunder-white/`와 `assets/product/hit-the-ball-white/`에 있습니다.
 - **임시값(실제 정보로 교체 필요):** 상품명, 사이즈표 수치, 상품 설명, 푸터 사업자 정보·전화번호·이메일·계좌
 - **미구현:** 로그인, 마이페이지, 결제, 재입고 알림, 리뷰 작성, 이용약관/개인정보 페이지 → 누르면 "준비 중" 토스트만 뜸
 - 장바구니는 서버 없이 브라우저 localStorage에만 저장
@@ -100,6 +101,13 @@ outputs/instagram/ 인스타그램용 제품 소개 영상(MP4), 커버·미리�
 - 변경 내용
 - 남은 일 / 주의사항
 -->
+
+### 2026-11-11 — Codex
+- Hit the Ball Tee_White 추가. 앞면 윗줄 “캐치 안좋으면”과 아랫줄 “언더로 함”은 가운데 정렬, 뒷면은 “Hit the ball” 한 줄. 가격은 790,000원.
+- 기존 흰색 티셔츠 사진을 참고해 내장 ImageGen으로 앞뒤 시안을 제작하고 상품 목록, 갤러리, 상세 사진에 연결.
+- 재고 정보가 없어 기존 상품과 같이 S / M / L / XL 품절로 설정.
+- Chrome에서 카테고리 목록, 한글·영문 검색, 상세 가격·품절 표시, 앞뒤 사진 전환과 모바일 390px 화면을 확인.
+- 사용자 요청에 따라 README와 상품 변경을 같은 커밋에 포함해 `main` 푸시로 Vercel 자동 배포를 진행.
 
 ### 2026-11-10 — Codex
 - 흰색 Rolling Thunder Tee_White 추가: 앞면 “일단 / 올려놨어” 두 줄, 뒷면 “롤링썬더” 한 줄 검정 레터링, 가격 650,000원

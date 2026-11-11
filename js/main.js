@@ -50,6 +50,27 @@ const PRODUCTS = [
       { src: "assets/product/rolling-thunder-white/back.webp", alt: "Rolling Thunder Tee_White 뒷면 — 롤링썬더 검정 레터링", width: 1086, height: 1448 },
     ],
   },
+  {
+    id: "hit-the-ball-tee-white",
+    name: "Hit the Ball Tee_White",
+    sub: "캐치 안좋으면 언더로 함 / Hit the ball",
+    price: 790000,
+    model: "Hit the Ball Tee",
+    color: "White",
+    lettering: "앞면 윗줄 “캐치 안좋으면”, 아랫줄 “언더로 함” / 등판 “Hit the ball” 검정 레터링 프린트",
+    cate: ["new", "26fw", "top"],
+    soldOut: true,
+    sizes: ["S", "M", "L", "XL"],
+    images: [
+      "assets/product/hit-the-ball-white/front.jpg",
+      "assets/product/hit-the-ball-white/back.jpg",
+    ],
+    hoverImage: "assets/product/hit-the-ball-white/back.jpg",
+    detailImages: [
+      { src: "assets/product/hit-the-ball-white/front.jpg", alt: "Hit the Ball Tee_White 앞면 — 윗줄 캐치 안좋으면, 아랫줄 언더로 함", width: 1086, height: 1448 },
+      { src: "assets/product/hit-the-ball-white/back.jpg", alt: "Hit the Ball Tee_White 뒷면 — Hit the ball", width: 1086, height: 1448 },
+    ],
+  },
 ];
 
 const CATEGORIES = [
